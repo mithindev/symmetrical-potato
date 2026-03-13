@@ -1,0 +1,25 @@
+# Postal Purpose Interest Calculation - Walkthrough
+
+The "Postal Purpose" feature has been successfully implemented on the [LoanReceipt.aspx](file:///c:/Users/mithi/Desktop/Fiscus/LoanReceipt.aspx) page. It provides a read-only, hypothetical calculation of the D-Interest based on a selected target date.
+
+## What Was Changed
+1. **[MODIFY] [LoanReceipt.aspx](file:///c:/Users/mithi/Desktop/Fiscus/LoanReceipt.aspx)**:
+   - Added a "Postal Purpose" button to the existing interest panel's button group.
+   - Added a new collapsible section that contains a Date picker (`txtPostalDate`), a Calculate button, and resulting read-only fields for the hypothetical calculation.
+   - Included a new field for **Final Amount**, which calculates the sum of the Balance and the calculated Interest Amount.
+
+2. **[MODIFY] [LoanReceipt.aspx.vb](file:///c:/Users/mithi/Desktop/Fiscus/LoanReceipt.aspx.vb)**:
+   - Added the `btnCalcPostal_Click` event handler.
+   - This function reads the provided `txtPostalDate.Text` and computes the exact interest that would accrue by that date.
+   - It directly uses local variables (`local_prd_buffer_d`, `local_dint`, `local_totalint_d`, etc.) and does **not** write to or modify the `Session` variables used by the live calculation. It only reads from `Session("dbal")`, `Session("cbal")`, and the `.Text` values of the current receipt.
+   - No SQL `INSERT` or `UPDATE` commands are executed.
+
+## Assurance on Regular Calculations
+Because `btnCalcPostal_Click` maintains its state in local variables and does not write back anything to the `Session` dictionary outside of what it needs to read, **it will not affect any regular calculations or saving process.** When you click the regular "Save" button for a receipt, it will use the original untouched `Session` state.
+
+## How to Test
+1. Compile the application (if applicable) or reload the [LoanReceipt.aspx](file:///c:/Users/mithi/Desktop/Fiscus/LoanReceipt.aspx) page in the browser.
+2. Enter a valid account number to load an active loan.
+3. In the interest panel on the right (where D-Interest, C-Interest are shown), look for the new "Postal Purpose" button.
+4. Click it, select a future date, and click **Calculate**.
+5. Observe the calculated fields, including the new **Final Amount**!

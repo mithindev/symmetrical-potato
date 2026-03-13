@@ -1,0 +1,14 @@
+date,transid,achead,narration,acn,debit,credit
+----,-------,------,---------,---,-----,------
+2021-03-02,155,DAILY DEPOSIT,By Cash    KS,1086       ,.00,400.00
+2021-02-02,155,RECURRING DEPOSIT,By Cash    FEB-FRM AXIS,4333       ,.00,1000.00
+2021-01-03,155,RECURRING DEPOSIT,By Cash    JAN,3598       ,.00,1400.00
+2020-12-01,155,Daily Collection Loan,To Interest    ,0010/19    ,294.00,.00
+2020-12-01,155,DCL INTEREST,By Interest01-12-2020    ,0010/19    ,.00,294.00
+2020-12-01,155,Daily Collection Loan,By Cash    ,0010/19    ,.00,263.00
+2020-11-01,155,SAVINGS DEPOSIT,By Cash    FR TRANS SBI VKY,0677       ,.00,8000.00
+2020-10-03,155,RECURRING DEPOSIT,By Cash    OCT-MOHAN,4290       ,.00,200.00
+2020-09-02,155,Jewel Loan,To Cash    CASH,0979/20    ,80000.00,.00
+2020-08-03,155,DAILY DEPOSIT,By Cash    KS,0991       ,.00,200.00
+
+(10 rows affected)

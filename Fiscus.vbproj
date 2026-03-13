@@ -1,0 +1,878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{F8FE843D-4952-471A-A8CB-698F6B59CCC5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Fiscus</RootNamespace>
+    <AssemblyName>Fiscus</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Fiscus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Fiscus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>packages\MailKit.3.3.0\lib\net47\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>packages\MimeKit.3.3.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.5.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AuditTrail.aspx" />
+    <Content Include="Admin\BalanceSheet.aspx" />
+    <Content Include="Admin\BankBook.aspx" />
+    <Content Include="Admin\Campagin.html" />
+    <Content Include="Admin\CancelledVouchers.aspx" />
+    <Content Include="Admin\GeneralLedger.aspx" />
+    <Content Include="Admin\GoldRate.aspx" />
+    <Content Include="Admin\goldrate.html" />
+    <Content Include="Admin\ImportExport.aspx" />
+    <Content Include="Admin\Product.aspx" />
+    <Content Include="Admin\ProfitandLoss.aspx" />
+    <Content Include="Admin\Roles.aspx" />
+    <Content Include="Admin\Scroll.aspx" />
+    <Content Include="Admin\scroll.html" />
+    <Content Include="Admin\StockBook.aspx" />
+    <Content Include="Admin\TrialBalance.aspx" />
+    <Content Include="Admin\tds.aspx" />
+    <Content Include="Admin\UserManagement.aspx" />
+    <Content Include="Backup.aspx" />
+    <Content Include="CashBook.aspx" />
+    <Content Include="Changepassword.aspx" />
+    <Content Include="css\Chart.min.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\Customer.css" />
+    <Content Include="css\Dashboard.css" />
+    <Content Include="css\daterangepicker.css" />
+    <Content Include="css\HoldOn.min.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\jquery.autocomplete.css" />
+    <Content Include="css\landing.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\smart_tab.min.css" />
+    <Content Include="css\style.bundle.css" />
+    <Content Include="css\stylelist.css" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="css\style_dark.css" />
+    <Content Include="css\temp.css" />
+    <Content Include="css\ValidationEngine.css" />
+    <Content Include="css\validationEngine.jquery.css" />
+    <Content Include="Customer.aspx" />
+    <Content Include="css\core.css" />
+    <Content Include="css\style.css" />
+    <Content Include="CustomerInquiry.aspx" />
+    <Content Include="DayBook.aspx" />
+    <Content Include="Default.htm" />
+    <Content Include="Denomination.aspx" />
+    <Content Include="DepositAnalysis.aspx" />
+    <Content Include="DepositClosure.aspx" />
+    <Content Include="DepositList.aspx" />
+    <Content Include="DepositOpening.aspx" />
+    <Content Include="Admin\MemberMerge.aspx" />
+    <Content Include="DepositPayment.aspx" />
+    <Content Include="DepositReceipt.aspx" />
+    <Content Include="DispatchReport.aspx" />
+    <Content Include="FieldCollection.aspx" />
+    <Content Include="fonts\feather-font\css\iconfont.css" />
+    <Content Include="Global.asax" />
+    <Content Include="GlPayment.aspx" />
+    <Content Include="GlReceipt.aspx" />
+    <Content Include="GroupAccounts.aspx" />
+    <Content Include="Images\813.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bg-3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\KBF-LOGO.png" />
+    <Content Include="Images\logo-letter-13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\minus.svg" />
+    <Content Include="Images\plus.svg" />
+    <Content Include="Images\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InterestPosting.aspx" />
+    <Content Include="InterestReport.aspx" />
+    <Content Include="JewelLoan.html" />
+    <Content Include="Journal.aspx" />
+    <Content Include="JournalBook.aspx" />
+    <Content Include="js\apexcharts.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\chart.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\core.js" />
+    <Content Include="js\dashboard.js" />
+    <Content Include="js\daterangepicker.js" />
+    <Content Include="js\feather.min.js" />
+    <Content Include="js\HoldOn.min.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.autocomplete.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.smartTab.min.js" />
+    <Content Include="js\jquery.validationEngine-en.js" />
+    <Content Include="js\jquery.validationEngine.js" />
+    <Content Include="js\jquery.webcam.js" />
+    <Content Include="js\jquery_002.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="js\printThis.js" />
+    <Content Include="js\template.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\wizard.js" />
+    <Content Include="KYC.aspx" />
+    <Content Include="Ledger.aspx" />
+    <Content Include="LoanAnalysis.aspx" />
+    <Content Include="LoanList.aspx" />
+    <Content Include="LoanOpening.aspx" />
+    <Content Include="LoanReceipt.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="membersearch.asmx" />
+    <Content Include="LoanPayment.aspx" />
+    <Content Include="partner.html" />
+    <Content Include="PettyCash.aspx" />
+    <Content Include="Postal.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="ProTrialBalance.aspx" />
+    <Content Include="RateofInterest.aspx" />
+    <Content Include="ReceiptwithDenom.html" />
+    <Content Include="ShareAllocation.aspx" />
+    <Content Include="ShareHolders.aspx" />
+    <Content Include="ShareLedger.aspx" />
+    <Content Include="ShareRegister.aspx" />
+    <Content Include="Soa.aspx" />
+    <Content Include="SoaDeposit.aspx" />
+    <Content Include="SoaLoan.aspx" />
+    <Content Include="soaprint.aspx" />
+    <Content Include="StandingInstruction.aspx" />
+    <Content Include="Suplementery.aspx" />
+    <Content Include="User\DashBoard-Cash.aspx" />
+    <Content Include="User\UserDashboard.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Webcam_Plugin\jquery.webcam.js" />
+    <Content Include="Webcam_Plugin\jscam.swf" />
+    <Content Include="Webcam_Plugin\jscam_canvas_only.swf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.Master.designer.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BalanceSheet.aspx.designer.vb">
+      <DependentUpon>BalanceSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BalanceSheet.aspx.vb">
+      <DependentUpon>BalanceSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AuditTrail.aspx.vb">
+      <DependentUpon>AuditTrail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AuditTrail.aspx.designer.vb">
+      <DependentUpon>AuditTrail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\tds.aspx.designer.vb">
+      <DependentUpon>tds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\tds.aspx.vb">
+      <DependentUpon>tds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BankBook.aspx.designer.vb">
+      <DependentUpon>BankBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BankBook.aspx.vb">
+      <DependentUpon>BankBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CancelledVouchers.aspx.designer.vb">
+      <DependentUpon>CancelledVouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CancelledVouchers.aspx.vb">
+      <DependentUpon>CancelledVouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GeneralLedger.aspx.designer.vb">
+      <DependentUpon>GeneralLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GeneralLedger.aspx.vb">
+      <DependentUpon>GeneralLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GoldRate.aspx.designer.vb">
+      <DependentUpon>GoldRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GoldRate.aspx.vb">
+      <DependentUpon>GoldRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportExport.aspx.designer.vb">
+      <DependentUpon>ImportExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ImportExport.aspx.vb">
+      <DependentUpon>ImportExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.vb">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.vb">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProfitandLoss.aspx.designer.vb">
+      <DependentUpon>ProfitandLoss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProfitandLoss.aspx.vb">
+      <DependentUpon>ProfitandLoss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.designer.vb">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.vb">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Scroll.aspx.designer.vb">
+      <DependentUpon>Scroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Scroll.aspx.vb">
+      <DependentUpon>Scroll.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StockBook.aspx.designer.vb">
+      <DependentUpon>StockBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StockBook.aspx.vb">
+      <DependentUpon>StockBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TrialBalance.aspx.designer.vb">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TrialBalance.aspx.vb">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManagement.aspx.designer.vb">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManagement.aspx.vb">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backup.aspx.designer.vb">
+      <DependentUpon>Backup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backup.aspx.vb">
+      <DependentUpon>Backup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CashBook.aspx.designer.vb">
+      <DependentUpon>CashBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CashBook.aspx.vb">
+      <DependentUpon>CashBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Changepassword.aspx.designer.vb">
+      <DependentUpon>Changepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Changepassword.aspx.vb">
+      <DependentUpon>Changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer.aspx.designer.vb">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.aspx.vb">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerInquiry.aspx.designer.vb">
+      <DependentUpon>CustomerInquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInquiry.aspx.vb">
+      <DependentUpon>CustomerInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DayBook.aspx.designer.vb">
+      <DependentUpon>DayBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DayBook.aspx.vb">
+      <DependentUpon>DayBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Denomination.aspx.designer.vb">
+      <DependentUpon>Denomination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Denomination.aspx.vb">
+      <DependentUpon>Denomination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepositAnalysis.aspx.designer.vb">
+      <DependentUpon>DepositAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositAnalysis.aspx.vb">
+      <DependentUpon>DepositAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepositClosure.aspx.designer.vb">
+      <DependentUpon>DepositClosure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositClosure.aspx.vb">
+      <DependentUpon>DepositClosure.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DepositList.aspx.designer.vb">
+      <DependentUpon>DepositList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositList.aspx.vb">
+      <DependentUpon>DepositList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepositOpening.aspx.designer.vb">
+      <DependentUpon>DepositOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositOpening.aspx.vb">
+      <DependentUpon>DepositOpening.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberMerge.aspx.designer.vb">
+      <DependentUpon>MemberMerge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberMerge.aspx.vb">
+      <DependentUpon>MemberMerge.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DepositPayment.aspx.designer.vb">
+      <DependentUpon>DepositPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositPayment.aspx.vb">
+      <DependentUpon>DepositPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepositReceipt.aspx.designer.vb">
+      <DependentUpon>DepositReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositReceipt.aspx.vb">
+      <DependentUpon>DepositReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DispatchReport.aspx.designer.vb">
+      <DependentUpon>DispatchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchReport.aspx.vb">
+      <DependentUpon>DispatchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FieldCollection.aspx.designer.vb">
+      <DependentUpon>FieldCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FieldCollection.aspx.vb">
+      <DependentUpon>FieldCollection.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="fiscusM.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlPayment.aspx.designer.vb">
+      <DependentUpon>GlPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GlPayment.aspx.vb">
+      <DependentUpon>GlPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GlReceipt.aspx.designer.vb">
+      <DependentUpon>GlReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GlReceipt.aspx.vb">
+      <DependentUpon>GlReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GroupAccounts.aspx.designer.vb">
+      <DependentUpon>GroupAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupAccounts.aspx.vb">
+      <DependentUpon>GroupAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterestPosting.aspx.designer.vb">
+      <DependentUpon>InterestPosting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InterestPosting.aspx.vb">
+      <DependentUpon>InterestPosting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterestReport.aspx.designer.vb">
+      <DependentUpon>InterestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InterestReport.aspx.vb">
+      <DependentUpon>InterestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Journal.aspx.designer.vb">
+      <DependentUpon>Journal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Journal.aspx.vb">
+      <DependentUpon>Journal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JournalBook.aspx.designer.vb">
+      <DependentUpon>JournalBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JournalBook.aspx.vb">
+      <DependentUpon>JournalBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KYC.aspx.designer.vb">
+      <DependentUpon>KYC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KYC.aspx.vb">
+      <DependentUpon>KYC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ledger.aspx.designer.vb">
+      <DependentUpon>Ledger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger.aspx.vb">
+      <DependentUpon>Ledger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanAnalysis.aspx.designer.vb">
+      <DependentUpon>LoanAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanAnalysis.aspx.vb">
+      <DependentUpon>LoanAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanList.aspx.designer.vb">
+      <DependentUpon>LoanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanList.aspx.vb">
+      <DependentUpon>LoanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanOpening.aspx.designer.vb">
+      <DependentUpon>LoanOpening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanOpening.aspx.vb">
+      <DependentUpon>LoanOpening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanReceipt.aspx.designer.vb">
+      <DependentUpon>LoanReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanReceipt.aspx.vb">
+      <DependentUpon>LoanReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="membersearch.asmx.vb">
+      <DependentUpon>membersearch.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanPayment.aspx.designer.vb">
+      <DependentUpon>LoanPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanPayment.aspx.vb">
+      <DependentUpon>LoanPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PettyCash.aspx.designer.vb">
+      <DependentUpon>PettyCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PettyCash.aspx.vb">
+      <DependentUpon>PettyCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Postal.aspx.designer.vb">
+      <DependentUpon>Postal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Postal.aspx.vb">
+      <DependentUpon>Postal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.vb">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.vb">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProTrialBalance.aspx.designer.vb">
+      <DependentUpon>ProTrialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProTrialBalance.aspx.vb">
+      <DependentUpon>ProTrialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RateofInterest.aspx.designer.vb">
+      <DependentUpon>RateofInterest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RateofInterest.aspx.vb">
+      <DependentUpon>RateofInterest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShareAllocation.aspx.designer.vb">
+      <DependentUpon>ShareAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShareAllocation.aspx.vb">
+      <DependentUpon>ShareAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShareHolders.aspx.designer.vb">
+      <DependentUpon>ShareHolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShareHolders.aspx.vb">
+      <DependentUpon>ShareHolders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ShareLedger.aspx.designer.vb">
+      <DependentUpon>ShareLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShareLedger.aspx.vb">
+      <DependentUpon>ShareLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShareRegister.aspx.designer.vb">
+      <DependentUpon>ShareRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShareRegister.aspx.vb">
+      <DependentUpon>ShareRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soa.aspx.designer.vb">
+      <DependentUpon>Soa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soa.aspx.vb">
+      <DependentUpon>Soa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SoaDeposit.aspx.designer.vb">
+      <DependentUpon>SoaDeposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoaDeposit.aspx.vb">
+      <DependentUpon>SoaDeposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoaLoan.aspx.designer.vb">
+      <DependentUpon>SoaLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoaLoan.aspx.vb">
+      <DependentUpon>SoaLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soaprint.aspx.designer.vb">
+      <DependentUpon>soaprint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soaprint.aspx.vb">
+      <DependentUpon>soaprint.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="StandingInstruction.aspx.designer.vb">
+      <DependentUpon>StandingInstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StandingInstruction.aspx.vb">
+      <DependentUpon>StandingInstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suplementery.aspx.designer.vb">
+      <DependentUpon>Suplementery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Suplementery.aspx.vb">
+      <DependentUpon>Suplementery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\DashBoard-Cash.aspx.designer.vb">
+      <DependentUpon>DashBoard-Cash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\DashBoard-Cash.aspx.vb">
+      <DependentUpon>DashBoard-Cash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User.Master.designer.vb">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\User.Master.vb">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserDashboard.aspx.designer.vb">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserDashboard.aspx.vb">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="fonts\feather-font\fonts\feather.woff" />
+    <Content Include="fonts\overpass\Overpass-Black.woff2" />
+    <Content Include="fonts\overpass\Overpass-Bold.woff2" />
+    <Content Include="fonts\overpass\Overpass-Italic.woff2" />
+    <Content Include="fonts\overpass\Overpass-Light.woff2" />
+    <Content Include="fonts\overpass\Overpass-Regular.woff2" />
+    <Content Include="fonts\overpass\Overpass-SemiBold.woff2" />
+    <Content Include="fonts\Nioicon.ttf" />
+    <Content Include="Admin\Web.config" />
+    <Content Include="fonts\poppins\poppins-v15-latin-300.woff2" />
+    <Content Include="fonts\poppins\poppins-v15-latin-600.woff2" />
+    <Content Include="fonts\poppins\poppins-v15-latin-800.woff2" />
+    <Content Include="fonts\poppins\poppins-v15-latin-900.woff2" />
+    <Content Include="fonts\poppins\poppins-v15-latin-italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v15-latin-regular.woff2" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="User\User.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Captures\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49962</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44320/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:49962/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

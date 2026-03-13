@@ -1,0 +1,25 @@
+﻿Microsoft (R) Build Engine version 4.8.9221.0
+[Microsoft .NET Framework, version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+Build started 25-02-2026 18:28:54.
+Project "C:\Users\mithi\Desktop\Fiscus\fiscus.sln" on node 1 (Build target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|Any CPU".
+Project "C:\Users\mithi\Desktop\Fiscus\fiscus.sln" (1) is building "C:\Users\mithi\Desktop\Fiscus\Fiscus.vbproj" (2) on node 1 (default targets).
+C:\Users\mithi\Desktop\Fiscus\Fiscus.vbproj(841,3): error MSB4019: The imported project "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0\WebApplications\Microsoft.WebApplication.targets" was not found. Confirm that the path in the <Import> declaration is correct, and that the file exists on disk.
+Done Building Project "C:\Users\mithi\Desktop\Fiscus\Fiscus.vbproj" (default targets) -- FAILED.
+Done Building Project "C:\Users\mithi\Desktop\Fiscus\fiscus.sln" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\mithi\Desktop\Fiscus\fiscus.sln" (Build target) (1) ->
+"C:\Users\mithi\Desktop\Fiscus\Fiscus.vbproj" (default target) (2) ->
+  C:\Users\mithi\Desktop\Fiscus\Fiscus.vbproj(841,3): error MSB4019: The imported project "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0\WebApplications\Microsoft.WebApplication.targets" was not found. Confirm that the path in the <Import> declaration is correct, and that the file exists on disk.
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.38
+

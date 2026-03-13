@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html runat="server">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <table border="0" style="border-collapse: collapse;width:100%">
+        <tbody>
+            <tr style="border: none;">
+                <td style="width: 10%;"><img src="https://www.kbfltd.in/assets/images/KBF-LOGO.png" alt="" width="72" height="60" /></td>
+                <td style="width: 52.8662%;">
+                    <table border="0" style="border-collapse: collapse; width: 0%; height: 86px;" height="43">
+                        <tbody>
+                            <tr style="height: 10px;">
+                                <td style="width: 100%; height: 10px;"><b>KARAVILAI NIDHI LIMITED</b></td>
+                            </tr>   
+                            <tr style="height: 10px;">
+                                <td style="width: 100%; height: 10px; text-align: left; font-size: 11px;"><span>Reg No : 18-37630/97</span><br/>8-12A,Vijayam, Main Road Karavilai,Villukuri P. O</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%;">Branch : <b>'<%= Session("sesusr").ToString %>'</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="width: 38.8535%;">
+                    <table style="float: right; margin-right: 10px; height: 63px;" width="183px" height="61">
+                        <tbody>
+                            <tr style="height: 21px;">
+                                <td colspan="2" style="width: 172px; height: 21px; text-align: center;">{copy}</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="width: 82px; height: 21px;">No&nbsp; &nbsp; :</td>
+                                <td style="width: 90px; height: 21px;">{vno}</td>
+                            </tr>
+                            <tr style="height: 21px;">
+                                <td style="width: 82px; height: 21px;">Date :</td>
+                                <td style="width: 90px; height: 21px;">{vdate}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr style="margin-top: 1px; height: 3px; background-color: #000;" />
+    <div style="display :inline-block;width:100%">
+        <div style="display: inline-block;margin-left:20px">
+            <table style="width:70%;border-style: none; float: left;" display:inline-block="">
+                <tbody>
+                    <tr style="height: 21px;">
+                        <td style="font-size: 12px; width: 139px; height: 21px;">Account No</td>
+                        <td style="width: 21px; height: 21px;"></td>
+                        <td border="1" style="width: 263px; height: 21px;">{acno}</td>
+                    </tr>
+                    <tr style="height: 21px;"></tr>
+                    <tr style="height: 21px;">
+                        <td style="font-size: 12px; width: 139px; height: 21px;">GL HEAD</td>
+                        <td style="width: 21px; height: 21px;"></td>
+                        <td border="0" style="width: 263px; height: 21px;">{glh}</td>
+                    </tr>
+                    <tr style="height: 21px;"></tr>
+                    <tr style="height: 21px;">
+                        <td style="font-size: 12px; width: 139px; height: 21px;">Member No</td>
+                        <td style="width: 21px; height: 21px;"></td>
+                        <td border="0" style="width: 263px; height: 21px;">{cid}</td>
+                    </tr>
+                    <tr style="height: 21px;"></tr>
+                    <tr style="height: 21px;">
+                        <td style="font-size: 12px; width: 139px; height: 21px;">Customer Name</td>
+                        <td style="width: 21px; height: 21px;"></td>
+                        <td border="0" style="width: 263px; height: 21px;">{cname}</td>
+                    </tr>
+                    <tr style="height: 21px;"></tr>
+                    <tr style="height: 21px;">
+                        <td style="font-size: 12px; width: 139px; height: 21px;">Amount</td>
+                        <td style="width: 21px; height: 21px;"></td>
+                        <td border="0" style="width: 263px; height: 21px;font-size:13px"><b>{amt}</b></td>
+                    </tr>
+                    <tr style="height: 21px;"></tr>
+                    <tr style="height: 21px;">
+                        <td colspan="3" style="font-size: 13px; width: 423px; height: 21px;">Amount in Words :<br />{aiw}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="display:inline-block;position:absolute;z-index:10;margin-right:10px;float:right ">
+            <table style="height: 277px; width: 185px;  border: 1px solid; padding-right: 0px; float: right;">
+                <tbody>
+                    <tr style="height: 31px; border: none;">
+                        <td style="width: 49px; height: 31px; font-size: 12px; text-align: right; ">2000 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl2k}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{2kamt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">500 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl500}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl500amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">200 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl200}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl200amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">100 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl100}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl100amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">50 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl50}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl50amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">20 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl20}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl20amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td style="width: 48px; height: 31px; font-size: 12px; text-align: right; padding-right: 5px;">10 x</td>
+                        <td style="width: 21px; height: 31px; font-size: 12px;">{lbl10}</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lbl10amt}</td>
+                    </tr>
+                    <tr style="height: 31px;">
+                        <td colspan="2" style="width: 69px; height: 31px; font-size: 9px; text-align: right; padding-right: 5px;">COINS</td>
+                        <td style="width: 22px; height: 31px; font-size: 12px;">=</td>
+                        <td style="width: 89px; height: 31px; font-size: 12px; text-align: right;">{lblcoins}</td>
+                    </tr>
+                    <tr style="height: 31px; " >
+                        <td colspan="3" style="text-align: center; padding-right: 0px; border:1px solid ; height: 29px;font-size: 13px;">Total</td>
+                        <td  style="text-align: right; padding-right: 5px; border:1px solid ; height: 29px;font-size: 13px;">{total}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top:20px;display:block">
+        <table  height="27" style="height: 27px;">
+            <tbody>
+                <tr>
+                    <td style="width: 203px; text-align: center;">Incharge / Manager</td>
+                    
+                    <td style="width: 172px; text-align: center;">Customer's Sign</td>
+                    
+                    <td style="width: 81px; text-align: center;">Cashier</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
